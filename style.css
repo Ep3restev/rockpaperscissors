@@ -1,13 +1,35 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,900;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;1,300&display=swap');
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
+    font-family: 'Roboto Mono', monospace;
 }
 
+
 body{
-    background-color: #293462;
+    background-color: #525E75;
+
+}
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 14vh;
+    background-color: #0A1D37;
+    color: white;
+}
+
+.movements{
+    width: 100%;
+    padding: 0 80px;
+    height: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
 }
 
 .wrapper{
@@ -18,69 +40,82 @@ body{
     padding-right: 16px;
 }
 
-h1{
-    margin-top: 40px;
-    font-size: 60px;
-    text-align: center;
-    font-family: 'Roboto', sans-serif;
-    color: aliceblue;
+.game_item{
+    width: 200px;
+    height: 200px;
+    border-radius: 200px;
+    border: black 4px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.container{
+.game_item img{
+    height: 100px;
+}
+
+.options{
     width: 100%;
-    height: 400px;
+    height: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-
 .btn{
-    cursor: pointer;
-    margin: 20px 20px;
     width: 200px;
-    height: 180px;
-    background-color: #F2EEE5;
-    font-size: 40px;
-    border-radius: 20px;
-    border: black 4px solid;
-    box-shadow: 20px 4px 22px;
-}
-
-.table_container{
-    position: relative;
-    display: flex;
-    justify-content: center;
-    width: 100%;
     height: 100px;
-    font-family: 'Roboto', sans-serif;
-}
-
-table, td, th{
-    color: #F2EEE5;
-    margin: 20px 20px;
-    padding: 0px 20px;
+    border-radius: 20px;
+    margin: 0 20px;
+    font-size: 28px;
 }
 
 #result, #winner{
+    max-width: 200px;
+    color: white;
     text-align: center;
     font-size: 28px;
 }
 
+
 .restart a{
-    font-family: 'Roboto', sans-serif;
     color: #F2EEE5;
     display: flex;
     width: 200px;
     height: 100px;
     background-color: #323643;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    margin-left: -100px;
-    margin-top: -60px;
     justify-content: center;
     align-items: center;
     border-radius: 20px;
-    box-shadow: 20px 4px 22px black;
+    font-size: 28px;
+}
+
+
+/*Corregir forma de diseño*/
+.puntuation_container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+
+}
+
+.puntuation{
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+    height: 100px;
+    color: white;
+}
+
+
+.score{
+   
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 20px;
 }

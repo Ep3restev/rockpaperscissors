@@ -7,12 +7,17 @@
  const winner = document.getElementById("winner");
  const wrapper = document.querySelector(".wrapper");
  const restart = document.querySelector(".restart");
+ const items = document.querySelectorAll(".game_item");
+ const youMove = document.getElementById("you_img");
+ const machMove = document.getElementById("machine_img")
 
-//Contador player y contador máquina.
+ //Counts real and machine player and total rounds.
 let countPlayer = 0, countMachine = 0, c = 0;
 
 
 restart.style.display = "none";
+
+
 
 
 
@@ -49,60 +54,79 @@ function round(playerSelection, computerSelection){
     return "You win, scissors cuts paper."
   }
   if (playerSelection === computerSelection){
-    countPlayer++;
-    countMachine++;
     return "Tie"
   }
   
 }
 
+const computerMovement = computerPlay();
 
  buttons.forEach(function(btn){
   btn.addEventListener("click", function(e){
     const classChecker = e.currentTarget.classList;
     if(classChecker.contains("paper")){
-      result.textContent= round("Paper", computerPlay())
+      result.textContent= round("Paper", computerMovement)
     }else if(classChecker.contains("rock")){
-      result.textContent= round("Rock", computerPlay())
+      result.textContent= round("Rock", computerMovement)
     }else if(classChecker.contains("scissors")){
-      result.textContent= round("Scissors", computerPlay())
+      result.textContent= round("Scissors", computerMovement)
     }
     c++;
     if(c===5){
       gameOver();
     }
-    gamePuntuation();
+    movementOption(classChecker, computerMovement)
+    score();
   })
  })
  
+ //Function to change selected movement image.
 
- //Mostrar puntuacion.
- function gamePuntuation(){
-  let table = document.getElementById("puntuacion");
-  let r1 = table.insertRow(0);
-  let c1 = r1.insertCell(0);
-  let c2 = r1.insertCell(1);
-  c1.innerHTML = countPlayer;
-  c2.innerHTML = countMachine; 
- 
+ function movementOption(a,b){
+  if(a.contains("paper")){
+    youMove.src="/Assets/paper.png";
+  }
+  if(a.contains("rock")){
+    youMove.src="/Assets/rock.png";
+  }
+  if(a.contains("scissors")){
+    youMove.src="/Assets/scissors.png";
+  }
+  if(b == "Paper"){
+    machMove.src="/Assets/paper.png";
+  }
+  if(b == "Rock"){
+    machMove.src="/Assets/rock.png";
+  }
+  if(b == "Scissors"){
+    machMove.src="/Assets/scissors.png";
+  }
+ }
+
+//show score
+ function score(){
+  document.getElementById("you").textContent= countPlayer;
+  document.getElementById("machine").textContent = countMachine;
 }
 
 
  
-//Fin de juego.
+//Game over
 function gameOver(){
   restart.style.display = "flex";
-
+  items.forEach(function(game_item){
+    game_item.style.display = "none";
+  });
   buttons.forEach(function(btn){
     btn.style.display = "none";
-  })
+  });
   result.style.display = "none";
   if(countMachine > countPlayer){
     winner.textContent = "Machine Wins";
   }else if (countMachine < countPlayer){
-    winner.textContent = "Player Wins"
+    winner.textContent = "Player Wins";
   }else{
-    winner.textContent = "It's a tie!"
+    winner.textContent = "It's a tie!";
   }
 
 }

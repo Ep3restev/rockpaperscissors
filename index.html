@@ -1,32 +1,46 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Rock paper scissors</title>
+    <title>Rock Paper Scissors</title>
 </head>
 <body>
-    <div class="wrapper">
-        <h1>ROCK PAPER SCISSORS</h1>
-        <div class="table_container">
-            <table id="puntuacion">
-                 <tr>
-                     <th>You</th>
-                     <th>Machine</th>
-                 </tr>
-            </table>
-         </div>
-        <div class="container">
+    <header>
+        <div class="wrapper">
+            <h1>ROCK PAPER SCISSORS</h1>
+        </div>
+    </header>
+    <div class="puntuation_container">
+        <div class="puntuation">
+            <h2>Score</h2>
+            <div class="score">
+                <h1 id="you">0</h1>
+                <h1>-</h1>
+                <h1 id="machine">0</h1>
+            </div>
+        </div>
+    </div>
+    <section>
+        <div class="wrapper">
+            <div class="movements">
+                <div class="game_item"><img src="/Assets/paper.png" id="you_img"></div>
+                <h1 id="result"></h2>
+                <div class="restart"><a href="/index.html">Play again</a></div>
+                <h1 id="winner"></h1>
+                <div class="game_item"><img src="/Assets/paper.png" id="machine_img"></div>
+            </div>
+        </div>
+    </section>
+    <div class="wrapper"></div>    
+        <div class="options">
             <button class="btn paper">Paper</button>
             <button class="btn rock">Rock</button>   
-            <button class="btn scissors">Scissors</button>      
+            <button class="btn scissors">Scissors</button>  
         </div>
-        <h1 id="result"></h2>
-        <h1 id="winner"></h1>
     </div>
-    <div class="restart"><a href="/index.html">Play again</a></div>
+   
     <script src="main.js"></script>
 </body>
 </html>
