@@ -84,22 +84,22 @@ const computerMovement = computerPlay();
 
  function movementOption(a,b){
   if(a.contains("paper")){
-    youMove.src="/Assets/paper.png";
+    youMove.src="./Assets/paper.png";
   }
   if(a.contains("rock")){
-    youMove.src="/Assets/rock.png";
+    youMove.src="./Assets/rock.png";
   }
   if(a.contains("scissors")){
-    youMove.src="/Assets/scissors.png";
+    youMove.src="./Assets/scissors.png";
   }
   if(b == "Paper"){
-    machMove.src="/Assets/paper.png";
+    machMove.src="./Assets/paper.png";
   }
   if(b == "Rock"){
-    machMove.src="/Assets/rock.png";
+    machMove.src="./Assets/rock.png";
   }
   if(b == "Scissors"){
-    machMove.src="/Assets/scissors.png";
+    machMove.src="./Assets/scissors.png";
   }
  }
 
